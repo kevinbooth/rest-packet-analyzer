@@ -1,4 +1,4 @@
 # REST API Packet Analyzer
 
-##: Purpose:
+## Purpose:
 Show the networking trace when interacting with a RESTful API.
