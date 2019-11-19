@@ -7,6 +7,11 @@ Nov 11, 2020
 
 debug = True
 
+from api import APIHelper
+from ui import CommandLineUI
 
 if __name__ == '__main__':
-    print('main')
+    ui = CommandLineUI()
+    activity_type = ui.prompt_user()
+    print(activity_type)
+
