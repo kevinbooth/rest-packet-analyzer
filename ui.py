@@ -7,13 +7,13 @@ Nov 18, 2020
 """
 
 import requests
-
+import json
 
 class CommandLineUI:
     """
     Provides functions to create the commandline user interface
     """
-    activity_types = ['busywork', 'charity', 'cooking', 'DIY', 'education', 
+    activity_types = ['busywork', 'charity', 'cooking', 'diy', 'education', 
                         'music', 'recreational', 'relaxation', 'social']
 
     def __init__(self): 
@@ -24,7 +24,7 @@ class CommandLineUI:
               'Courtesy of The Bored REST API\n' +
               '---------------------------------------\n')
 
-    def prompt_user(self):
+    def request_activity(self):
         """
         Prompts the user to input a type of activity they would like to try
         """
@@ -36,9 +36,33 @@ class CommandLineUI:
                                   'busywork, education, social, DIY, \n' +
                                   'music, and charity): ')
         
-            if activity_type in self.activity_types:
+            if activity_type.lower() in self.activity_types:
                 return activity_type
             else:
                 print('\nYou inputted a wrong activity type.\n')
+
+    def request_response_info(self, response):
+        while True:
+            answer = input('\nWould you like to see the developer \n' +
+                           'information regarding the API request? \n' +
+                           '[Y/N]: ')
+            
+            if answer in ['Y', 'y', 'yes', 'N', 'n', 'no']:
+                self.display_response_info(response)
+                return
+            else:
+                print('\nYou inputted a wrong activity type.\n')
+
+    def display_result(self, activity):
+        print('\n-------- Here\'s Your Activity --------\n' + activity['activity'])
+        print('  Participants Needed:', activity['participants'])
+        print('  Price (0-1 [0-$$$]):', activity['price'])
+        print('  Accessibility (0-1 [easy-hard]):', activity['price'])
+
+    def display_response_info(self, response):
+        print('\n------- API Response Information -------')
+        print('Status Code: ' + str(response.status_code))
+        print('Headers (JSON): \n' + json.dumps(dict(response.headers), indent=3, sort_keys=True) + '\n')
+        print('Content (JSON): \n' + json.dumps(response.json(), indent=3, sort_keys=True))
         
 

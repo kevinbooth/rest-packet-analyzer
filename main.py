@@ -17,13 +17,15 @@ if __name__ == '__main__':
 
     # Display command line UI
     ui.welcome()
-    activity_type = ui.prompt_user()
+    activity_type = ui.request_activity()
 
     # Make API request
     response = api.get('activity?type=' + activity_type)
+    data = response.json()
 
-    print('\n------- API Response Information -------')
-    print('Status Code: ' + str(response.status_code))
-    print('Headers (JSON): \n' + json.dumps(dict(response.headers), indent=3, sort_keys=True) + '\n')
-    print('Content (JSON): \n' + json.dumps(response.json(), indent=3, sort_keys=True))
+    #Display pretty result
+    ui.display_result(data)
+
+    # Ask to see response information
+    ui.request_response_info(response)
 
