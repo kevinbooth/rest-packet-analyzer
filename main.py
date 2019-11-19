@@ -5,7 +5,6 @@ Created by Kevin Booth
 Nov 11, 2020
 """
 
-debug = True
 
 from api import APIHelper
 from ui import CommandLineUI
