@@ -61,7 +61,9 @@ class CommandLineUI:
 
     def display_response_info(self, response):
         print('\n------- API Response Information -------')
-        print('Status Code: ' + str(response.status_code))
+        print('Status Code:', str(response.status_code))
+        print('Response History Status Codes:', str(response.history))
+        print('Server URL Requested:', str(response.url))
         print('Headers (JSON): \n' + json.dumps(dict(response.headers), indent=3, sort_keys=True) + '\n')
         print('Content (JSON): \n' + json.dumps(response.json(), indent=3, sort_keys=True))
         
