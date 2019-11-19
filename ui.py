@@ -19,16 +19,22 @@ class CommandLineUI:
     def __init__(self): 
         return
 
+    def welcome(self):
+        print('Welcome to the REST API Packet Analyzer\n' +
+              'Courtesy of The Bored REST API\n' +
+              '---------------------------------------\n')
+
     def prompt_user(self):
         """
         Prompts the user to input a type of activity they would like to try
         """
 
         while True:
-            activity_type = input('Please select one of the nine types of activities' +
-                            ' that you may be interested in.\n' +
-                            '(recreational, relaxation, cooking, busywork,' +
-                            ' education, social, DIY, music, and charity): ')
+            activity_type = input('Please select one of the nine types of \n' +
+                                  'activities that you may be interested \n' +
+                                  'in. (recreational, relaxation, cooking, \n' +
+                                  'busywork, education, social, DIY, \n' +
+                                  'music, and charity): ')
         
             if activity_type in self.activity_types:
                 return activity_type
