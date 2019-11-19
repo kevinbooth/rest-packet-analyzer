@@ -25,9 +25,9 @@ class APIHelper:
         Makes a GET request to the Bored API
         resource: string containing the API resource
             ex: '/activity'
-        Returns: JSON Object
+        Returns: response object
         """
-        response = requests.get(self.api_url + resource)
-
+        response = requests.get(self.api_full_url + resource)
+        
         return response
 
