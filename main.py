@@ -12,6 +12,7 @@ from ui import CommandLineUI
 
 if __name__ == '__main__':
     ui = CommandLineUI()
+    ui.welcome()
     activity_type = ui.prompt_user()
     print(activity_type)
 
