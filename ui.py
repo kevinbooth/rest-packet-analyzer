@@ -64,6 +64,7 @@ class CommandLineUI:
         print('Status Code:', str(response.status_code))
         print('Response History Status Codes:', str(response.history))
         print('Server URL Requested:', str(response.url))
+        print('Packet Size (bytes):', str(len(response.content)))
         print('Headers (JSON): \n' + json.dumps(dict(response.headers), indent=3, sort_keys=True) + '\n')
         print('Content (JSON): \n' + json.dumps(response.json(), indent=3, sort_keys=True))
         

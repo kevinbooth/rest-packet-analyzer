@@ -27,7 +27,7 @@ class APIHelper:
             ex: '/activity'
         Returns: response object
         """
-        response = requests.get(self.api_full_url + resource)
+        response = requests.get(self.api_full_url + resource, stream=True)
         
         return response
 
