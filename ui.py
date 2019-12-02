@@ -60,7 +60,7 @@ class CommandLineUI:
         print('  Accessibility (0-1 [easy-hard]):', activity['price'])
 
     def display_response_info(self, response):
-        print('\n------- API Response Information -------')
+        print('\n--- API Packet Response Information ----')
         print('Status Code:', str(response.status_code))
         print('Response History Status Codes:', str(response.history))
         print('Server URL Requested:', str(response.url))
