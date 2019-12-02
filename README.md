@@ -1,10 +1,16 @@
 # REST API Packet Analyzer
 
-## Purpose:
-Show the networking trace when interacting with a RESTful API.
-
-## Example REST API:
+## Bored REST API:
 This application uses an example REST API called Bored API which can be found [here](https://www.boredapi.com/).
+
+## Utility Purpose:
+Show the content of a return network packet when interacting with a RESTful API.
+
+## Educational Purpose
+* Understand the Representation State Transfer architecture
+* Gain experience with maintaining a client-server relationship over the internet
+* Dissect the return network packet sent from the server via a REST API
+* Learn to parse out the JSON API response
 
 ## Setup Local Environment:
 1. Install the Python package requirements
