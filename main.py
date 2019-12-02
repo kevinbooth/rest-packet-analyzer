@@ -22,9 +22,8 @@ if __name__ == '__main__':
     response = api.get('activity?type=' + activity_type)
     data = response.json()
 
-    #Display pretty result
+    # Display pretty result
     ui.display_result(data)
 
     # Ask to see response information
     ui.request_response_info(response)
-

@@ -9,14 +9,15 @@ Nov 18, 2020
 import requests
 import json
 
+
 class CommandLineUI:
     """
     Provides functions to create the command line user interface
     """
-    activity_types = ['busywork', 'charity', 'cooking', 'diy', 'education', 
-                        'music', 'recreational', 'relaxation', 'social']
+    activity_types = ['busywork', 'charity', 'cooking', 'diy', 'education',
+                      'music', 'recreational', 'relaxation', 'social']
 
-    def __init__(self): 
+    def __init__(self):
         return
 
     def welcome(self):
@@ -34,12 +35,12 @@ class CommandLineUI:
         Returns: void
         """
         while True:
-            activity_type = input('Please select one of the nine types of \n' +
-                                  'activities that you may be interested \n' +
-                                  'in. (recreational, relaxation, cooking, \n' +
+            activity_type = input('Please select one of the nine types of\n' +
+                                  'activities that you may be interested\n' +
+                                  'in. (recreational, relaxation, cooking,\n' +
                                   'busywork, education, social, DIY, \n' +
                                   'music, and charity): ')
-        
+
             if activity_type.lower() in self.activity_types:
                 return activity_type
             else:
@@ -54,7 +55,7 @@ class CommandLineUI:
             answer = input('\nWould you like to see the developer \n' +
                            'information regarding the API request? \n' +
                            '[Y/N]: ')
-            
+
             if answer in ['Y', 'y', 'yes', 'N', 'n', 'no']:
                 self.display_response_info(response)
                 return
@@ -66,7 +67,8 @@ class CommandLineUI:
         Displays activity results
         Returns: void
         """
-        print('\n-------- Here\'s Your Activity --------\n' + activity['activity'])
+        print('\n-------- Here\'s Your Activity --------\n' +
+              activity['activity'])
         print('  Participants Needed:', activity['participants'])
         print('  Price (0-1 [0-$$$]):', activity['price'])
         print('  Accessibility (0-1 [easy-hard]):', activity['price'])
@@ -81,7 +83,7 @@ class CommandLineUI:
         print('Response History Status Codes:', str(response.history))
         print('Server URL Requested:', str(response.url))
         print('Packet Size (bytes):', str(len(response.content)))
-        print('Headers (JSON): \n' + json.dumps(dict(response.headers), indent=3, sort_keys=True) + '\n')
-        print('Content (JSON): \n' + json.dumps(response.json(), indent=3, sort_keys=True))
-        
-
+        print('Headers (JSON): \n' + json.dumps(dict(response.headers),
+              indent=3, sort_keys=True) + '\n')
+        print('Content (JSON): \n' + json.dumps(response.json(),
+              indent=3, sort_keys=True))

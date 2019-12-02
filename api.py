@@ -18,7 +18,6 @@ class APIHelper:
 
     def __init__(self, url):
         self.api_full_url = url
-        
 
     def get(self, resource):
         """
@@ -28,6 +27,5 @@ class APIHelper:
         Returns: response object
         """
         response = requests.get(self.api_full_url + resource, stream=True)
-        
-        return response
 
+        return response
