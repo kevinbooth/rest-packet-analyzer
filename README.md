@@ -14,7 +14,7 @@ Show the content of a return network packet when interacting with a RESTful API.
 * Learn to parse out the JSON API response
 
 ## Limitations
-* Because I used the requests package, I was limited to how much I could see of the packet.
+* Because I used the requests package, I was limited to how much I could see of the packet
   * However, I was still able to gain a lot of insight on REST API packet construction
 * In the future, I would update the program to utilize a package like scapy to gain more information on network packets
   * I tried implementing this initially, but it required a lot of work up front to get working
