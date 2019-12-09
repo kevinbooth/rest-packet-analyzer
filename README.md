@@ -74,7 +74,7 @@ Content (JSON):
 
 ```
 
-## Setup Local Environment:
+## Setup Local Environment
 1. Install the Pyt  hon package requirements
 ```
 pip install -r requirements.txt
