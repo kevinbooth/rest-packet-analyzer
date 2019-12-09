@@ -75,11 +75,19 @@ Content (JSON):
 ```
 
 ## Setup Local Environment
-1. Install the Python package requirements
+1. Create your virtual environment
+```
+python3 -m venv /path/to/new/virtual/environment
+```
+2. Start virtual environment
+```
+source /path/to/new/virtual/environment/bin/activate
+```
+3. Install the Python package requirements
 ```
 pip install -r requirements.txt
 ```
-2. Run the Python file main.py
+4. Run the Python file main.py
 ```
 python3 main.py
 ```
